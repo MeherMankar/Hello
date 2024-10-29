@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Direct Download Almost Anything</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="download,movies,games,music,softwares,epub,ebooks,pdf,mp3,songs,direct download">
+    <meta name="description" content="Find direct download links for about anything. TV Series, Movies, Books, music, softwares, games anything. Take advantage of powerful advanced search of Google.">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+    <style>
+        body {
+            padding: 20px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .category {
+            margin-top: 30px;
+        }
+        .download-link {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Direct Download Almost Anything</h1>
+        <p>Find direct download links for movies, series, games, software, and PDFs.</p>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search for downloads...">
+        <button id="searchButton" class="btn btn-primary">Search</button>
+    </div>
+
+    <div class="category">
+        <h2>Movies</h2>
+        <div id="moviesList">
+            <a href="#" class="btn btn-success download-link">Movie 1</a>
+            <a href="#" class="btn btn-success download-link">Movie 2</a>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Series</h2>
+        <div id="seriesList">
+            <a href="#" class="btn btn-success download-link">Series 1</a>
+            <a href="#" class="btn btn-success download-link">Series 2</a>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Games</h2>
+        <div id="gamesList">
+            <a href="#" class="btn btn-success download-link">Game 1</a>
+            <a href="#" class="btn btn-success download-link">Game 2</a>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Software</h2>
+        <div id="softwareList">
+            <a href="#" class="btn btn-success download-link">Software 1</a>
+            <a href="#" class="btn btn-success download-link">Software 2</a>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>PDFs</h2>
+        <div id="pdfList">
+            <a href="#" class="btn btn-success download-link">PDF 1</a>
+            <a href="#" class="btn btn-success download-link">PDF 2</a>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#searchButton').click(function() {
+            var searchTerm = $('#searchInput').val().toLowerCase();
+            $('.category .download-link').each(function() {
+                var linkText = $(this).text().toLowerCase();
+                if (linkText.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+        
+        // Optionally hide all links initially
+        $('.download-link').hide();
+        
+        // Show all links on page load
+        $('.download-link').show();
+    });
+</script>
+
+</body>
+</html>
